@@ -70,7 +70,7 @@ def monitorAntminerStatus(api_ips,api_port=4028,restartFreqs):
 					done = False
 					while not done:
 						try:
-							ssh.connect('10.0.0.56', username='root', password='admin')
+							ssh.connect(api_ips[i], username='root', password='admin')
 							done = True
 						except:
 							print('connect error')
