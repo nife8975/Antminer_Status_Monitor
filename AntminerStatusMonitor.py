@@ -55,7 +55,7 @@ def monitorAntminerStatus(api_ips,api_port=4028,restartFreqs):
 					try:
 						s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 						s.connect((api_ip,int(api_port)))
-						s.send(json.dumps({"command":api_command[0]}).encode('utf-8'))
+						s.send(json.dumps({"command":"summary"}).encode('utf-8'))
 						response = linesplit(s)
 						response = response.decode().replace('\x00','')
 						response = json.loads(response)
